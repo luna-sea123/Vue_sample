@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        足し算 <input type="number" v-model.number="numInp1" /> +
+        <input type="number" v-model.number="numInp2" /> =
+        <span>{{ add }}</span>
+      </div>
+
+      <div>
+        引き算 <input type="number" v-model.number="numInp3" /> -
+        <input type="number" v-model.number="numInp4" /> =
+        <span>{{ min }}</span>
+      </div>
+
+      <div>
+        掛け算 <input type="number" v-model.number="numInp5" /> *
+        <input type="number" v-model.number="numInp6" /> =
+        <span>{{ multi }}</span>
+      </div>
+
+      <div>
+        割り算 <input type="number" v-model="numInp7" /> /
+        <input type="number" v-model="numInp8" /> =
+        <span>{{ division }}</span>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          numInp1: 0,
+          numInp2: 0,
+          numInp3: 0,
+          numInp4: 0,
+          numInp5: 0,
+          numInp6: 0,
+          numInp7: 1,
+          numInp8: 1,
+        },
+        computed: {
+          add: function () {
+            return this.numInp1 + this.numInp2;
+          },
+          min: function () {
+            return this.numInp3 - this.numInp4;
+          },
+          multi: function () {
+            return this.numInp5 * this.numInp6;
+          },
+          division: function () {
+            return this.numInp7 / this.numInp8;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

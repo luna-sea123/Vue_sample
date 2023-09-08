@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>top</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <!--Vue.jsがhtmlを書き換える前のhtmlが一度表示されてしまうのを避けるためのもの-->
+      <div v-cloak>
+        <transition name="fade" mode="out-in">
+          <!-- .fade- で指定 -->
+          <!--mode=”out-in” 切り替え前のコンテンツが消えてから切り替え後のコンテンツが現れるようにするための設定-->
+          <div v-if="center" key="center">
+            <div class="animated fadeInDownBig">
+              <h1>center</h1>
+              <div v-on:click="watchLeft">left</div>
+              <div v-on:click="watchRight">right</div>
+            </div>
+          </div>
+
+          <div v-if="left" key="left">
+            <div class="animated" v-bind:class="leftSlideClass">
+              <h1>left</h1>
+              <div v-on:click="watchCenter">center</div>
+              <div v-on:click="watchRight">right</div>
+            </div>
+          </div>
+
+          <div v-if="right" key="right">
+            <div class="animated" v-bind:class="rightSlideClass">
+              <h1>right</h1>
+              <div v-on:click="watchCenter">center</div>
+              <div v-on:click="watchLeft">left</div>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data() {
+          return {
+            center: true,
+            left: false,
+            right: false,
+            leftSlideClass: "fadeInBottomLeft",
+            rightSlideClass: "fadeInBottomRight",
+          };
+        },
+        methods: {
+          watchCenter: function () {
+            this.center = true;
+            this.left = false;
+            this.right = false;
+          },
+          watchLeft: function () {
+            this.center = false;
+            this.left = true;
+            this.right = false;
+            this.leftSlideClass = "fadeInLeft";
+          },
+          watchRight: function () {
+            this.center = false;
+            this.left = false;
+            this.right = true;
+            this.rightSlideClass = "fadeInRight";
+          },
+        },
+      });
+    </script>
+
+    <style>
+      div.click {
+        cursor: pointer;
+      }
+
+      [v-cloak] {
+        display: none;
+      }
+
+      .fade-enter,
+      .fade-leave-to {
+        opacity: 0;
+      }
+
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity 0.5s;
+      }
+
+      .fade-enter-to,
+      .fade-leave {
+        opacity: 1;
+      }
+    </style>
+  </body>
+</html>

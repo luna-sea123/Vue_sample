@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>配列</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul id="item">
+        <li v-for=" item in items" key="item.message">{{ item.message }}</li>
+      </ul>
+    </div>
+
+    <script>
+      var item = new Vue({
+        el: "#item",
+        data: {
+          items: [
+            { message: "apple" },
+            { message: "banana" },
+            { message: "srawberry" },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>
