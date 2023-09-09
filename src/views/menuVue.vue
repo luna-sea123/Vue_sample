@@ -1,17 +1,23 @@
 <template>
   <div class="menu">
     <h1>menu</h1>
-    <HelloWorld msg="メニュー画面です"></HelloWorld>
+    <Header></Header>
+    <Body></Body>
+    <top msg="メニュー画面です"></top>
+    <Body></Body>
   </div>
 </template>
 
 <script>
-  import HelloWorld from "@/components/HelloWorld.vue";
+  import Header from "@/components/Header.vue";
+  import Body from "@/components/Body.vue";
+  import top from "@/components/top.vue";
 
   export default {
-    name: "menuVue",
     components: {
-      HelloWorld,
+      Header,
+      Body,
+      top,
     },
   };
 </script>

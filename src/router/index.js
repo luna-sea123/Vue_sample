@@ -36,3 +36,4 @@ const router = createRouter({
 
 //他のファイルからアクセスできるようにする
 export default router;
+
