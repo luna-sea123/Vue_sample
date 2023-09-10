@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import menuVue from "../views/menuVue.vue";
 import memo from "../views/memo.vue";
+import EditVue from "../views/EditVue.vue";
 
 //ルーティング定義配列 ↓
 const routes = [
@@ -27,6 +28,11 @@ const routes = [
     path: "/memo",
     name: "memo",
     component: memo,
+  },
+  {
+    path: "/edit/:id",
+    name: "edit",
+    component: EditVue,
   },
 ];
 //ここまで ↑

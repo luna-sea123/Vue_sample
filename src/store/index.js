@@ -1,28 +1,40 @@
 import { createStore } from "vuex";
 
 export default createStore({
-  //状態 データ
   state: {
     count: 0,
     //memo配列
     memos: [],
   },
 
-  //ストア内のデータを取ってくる
-  getters: {},
+  getters: {
+    getCount: (state) => {
+      return state.memos.length;
+    },
+    getAll: (state) => {
+      return state.memos;
+    },
 
-  //ステイトの内容を変更する
+    getMemoById: (state) => (id) => {
+      return state.memos.find((memo) => memo.id === id);
+    },
+  },
+
   mutations: {
     //メモを保存
     save(state, newMemo) {
-      //メモにId付与
-      newMemo.id = ++state.count;
-      //unshift 配列の先頭に値を代入
-      state.memos.unshift(newMemo);
+      if (newMemo.id) {
+        let x = state.memos.find((memo) => memo.id === newMemo.id);
+        x.title = newMemo.title;
+        x.content = newMemo.content;
+      } else {
+        newMemo.id = ++state.count;
+        //unshift 配列の先頭に値を代入
+        state.memos.unshift(newMemo);
+      }
     },
   },
-  //非同期通信
+
   actions: {},
-  //複数のステイトをモジュールとする
   modules: {},
 });
