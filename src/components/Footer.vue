@@ -9,8 +9,8 @@
   export default {
     data() {
       return {
-        title: "Header",
-        text: "Hello Vue.js!",
+        title: "footer",
+        text: "fighting !!",
       };
     },
   };
@@ -18,12 +18,12 @@
 
 <style scoped>
   div {
-    border: 1px solid blue;
+    border: 1px solid red;
   }
   h1 {
-    color: blue;
+    color: red;
   }
   p {
-    color: blue;
+    color: red;
   }
 </style>

@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-//import Router from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import menuVue from "../views/menuVue.vue";
+import memo from "../views/memo.vue";
 
 //ルーティング定義配列 ↓
 const routes = [
@@ -23,6 +23,11 @@ const routes = [
     //インポート
     component: menuVue,
   },
+  {
+    path: "/memo",
+    name: "memo",
+    component: memo,
+  },
 ];
 //ここまで ↑
 
@@ -36,4 +41,3 @@ const router = createRouter({
 
 //他のファイルからアクセスできるようにする
 export default router;
-
