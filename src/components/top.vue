@@ -1,11 +1,8 @@
 <template>
   <div class="top">
     <h1>{{ msg }}</h1>
-    <router-link to="/memo">memo</router-link>
-    <h1>test</h1>
-    <h2>test</h2>
-    <h3>test</h3>
 
+    <router-link to="/memo">memo</router-link>
     <!-- v-if判定未 何も表示されない-->
     <div id="app">
       <div v-if="center" key="center">

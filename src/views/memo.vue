@@ -8,6 +8,7 @@
     <Footer />
   </div>
 </template>
+
 <script>
   import MemoForm from "@/components/MemoForm.vue";
   import Footer from "@/components/Footer.vue";
