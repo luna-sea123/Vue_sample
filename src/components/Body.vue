@@ -1,29 +1,30 @@
 <template>
-    <div>
-        <h2>{{ title }}</h2>
-        <p>{{ text }}</p>
-    </div>
+  <div>
+    <h2>{{ title }}</h2>
+    <p>{{ text }}</p>
+    <router-link to=""></router-link>
+  </div>
 </template>
 
 <script>
-export default {
-    data(){
-        return {
-            title: "Body",
-            text: "Have a good day!"
-        }
-    }
-}
+  export default {
+    data() {
+      return {
+        title: "Body",
+        text: "Have a good day!",
+      };
+    },
+  };
 </script>
 
 <style scoped>
-div{
-    border: 1px solid red
-}
-h2{
-    color: red
-}
-p{
-    color: red
-}
+  div {
+    border: 1px solid red;
+  }
+  h2 {
+    color: red;
+  }
+  p {
+    color: red;
+  }
 </style>
